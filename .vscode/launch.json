@@ -11,7 +11,7 @@
             "program": "${workspaceFolder}/gmtk_2022_game/_bin/Debug/gmtk_2022_game",
             "args": [],
             "stopAtEntry": false,
-            "cwd": "${fileDirname}",
+            "cwd": "${workspaceFolder}/gmtk_2022_game",
             "environment": [],
             "externalConsole": false,
             "MIMode": "gdb",
