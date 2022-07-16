@@ -13,6 +13,7 @@ namespace gmtk2022
     void LoadingScreen::Init()
     {
         m_Textures = Assets::GetTextureList();
+        m_TextureStartSize = m_Textures.size();
         m_NextTexture = m_Textures[0];
         m_Textures.erase(m_Textures.begin());
     }
@@ -45,7 +46,31 @@ namespace gmtk2022
 
     void LoadingScreen::Draw()
     {
-        DrawText(m_NextTexture.c_str(), 25, 25, 24, WHITE);
+        /*
+            // Create a box for the progress bar
+            context.strokeRect(canvas.width / 2 - 200, canvas.height / 2 - 50, 400, 100);
+
+            // Fill the progress bar
+            context.fillRect(canvas.width / 2 - 200, canvas.height / 2 - 50, 400 * ((totalAssets - remainingAssets) / totalAssets), 100);
+
+            // Draw the text
+            context.font = '30px Arial';
+            context.textAlign = 'center';
+            context.fillStyle = '#00ff00'
+            // Align the text to the center of the progress bar
+            // context.fillText('Downloading assets...', canvas.width / 2 - 200, canvas.height / 2 - 25);
+            // context.fillText('(' + (totalAssets - remainingAssets) + '/' + totalAssets + ')', canvas.width / 2 - 200, canvas.height / 2 + 25);
+            context.fillText('Downloading assets...', canvas.width / 2, canvas.height / 2 - 15);
+            context.fillText('(' + (totalAssets - remainingAssets) + '/' + totalAssets + ')', canvas.width / 2, canvas.height / 2 + 35);
+        */
+
+        int nextTextureWidth = MeasureText(m_NextTexture.c_str(), 24);
+        int loadingTextWidth = MeasureText("Loading assets...", 24);
+ 
+        DrawRectangle(GetScreenWidth() / 2 - 200, GetScreenHeight() / 2 - 50, 400, 100, DARKGRAY);
+        DrawRectangle(GetScreenWidth() / 2 - 200, GetScreenHeight() / 2 - 50, 400 * ((m_TextureStartSize - m_Textures.size()) / m_TextureStartSize), 100, GREEN);
+        DrawText("Loading assets...", GetScreenWidth() / 2 - loadingTextWidth / 2, GetScreenHeight() / 2 - 20, 24, RAYWHITE);
+        DrawText(m_NextTexture.c_str(), GetScreenWidth() / 2 - nextTextureWidth / 2, GetScreenHeight() / 2 + 20, 24, RAYWHITE);
     }
 
     void LoadingScreen::Unload()
