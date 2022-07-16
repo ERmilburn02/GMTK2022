@@ -5,15 +5,18 @@
 
 namespace gmtk2022
 {
-	class TitleScreen : public Screen
+    class LogoScreen : public Screen
 	{
 	public:
-		TitleScreen(App* app);
+        LogoScreen(App* app);
 		void Init();
 		void Update();
 		void Draw();
 		void Unload();
 	private:
-		App* m_App;
+		float m_Timer;
+		int m_LogoAlpha;
+		const float m_TimerMax = 5.0f;
+        App* m_App;
 	};
 }

@@ -41,7 +41,7 @@ namespace gmtk2022
         m_CurrentScreen->Update();
 
         BeginDrawing();
-        ClearBackground(RAYWHITE);
+        ClearBackground(BLACK);
 
         m_CurrentScreen->Draw();
 

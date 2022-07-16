@@ -13,6 +13,13 @@ namespace gmtk2022
 		AddTexture("Jam Logo Big", jamLogoBig);
 	}
 
+	std::vector<std::string> Assets::GetTextureList()
+	{
+		std::vector<std::string> textures;
+		textures.push_back("resources/images/jam_logo_big.png");
+		return textures;
+	}
+
 	Texture2D Assets::GetTexture(std::string name)
 	{
 		std::map<std::string, Texture2D>::iterator itr;
