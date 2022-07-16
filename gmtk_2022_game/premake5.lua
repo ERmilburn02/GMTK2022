@@ -62,7 +62,7 @@ workspaceName = path.getbasename(os.getcwd())
 
 workspace (workspaceName)
     configurations { "Debug", "Release"}
-    platforms { "x64", "x86"}
+    platforms { "x64"}
 
     filter "configurations:Debug"
         defines { "DEBUG" }
