@@ -1,6 +1,6 @@
-#include "TitleScreen.hpp"
+#include "Core/TitleScreen.hpp"
 #include <raylib.h>
-#include "Assets.hpp"
+#include "Core/Assets.hpp"
 
 namespace gmtk2022
 {

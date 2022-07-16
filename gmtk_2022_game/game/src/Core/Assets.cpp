@@ -1,4 +1,4 @@
-#include "Assets.hpp"
+#include "Core/Assets.hpp"
 #include <cassert>
 
 namespace gmtk2022

@@ -1,7 +1,7 @@
 #pragma once
 
-#include "Screens.hpp"
-#include "App.hpp"
+#include "Core/Screens.hpp"
+#include "Core/App.hpp"
 
 namespace gmtk2022
 {

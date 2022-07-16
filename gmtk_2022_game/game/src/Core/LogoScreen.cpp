@@ -1,8 +1,8 @@
 #include <raylib.h>
 
-#include "LogoScreen.hpp"
-#include "Assets.hpp"
-#include "TitleScreen.hpp"
+#include "Core/LogoScreen.hpp"
+#include "Core/Assets.hpp"
+#include "Core/TitleScreen.hpp"
 
 namespace gmtk2022
 {

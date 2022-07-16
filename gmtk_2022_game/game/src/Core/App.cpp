@@ -1,4 +1,4 @@
-#include "App.hpp"
+#include "Core/App.hpp"
 #include <raylib.h>
 
 #if defined(PLATFORM_WEB)
