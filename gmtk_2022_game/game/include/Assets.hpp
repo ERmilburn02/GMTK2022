@@ -9,6 +9,9 @@ namespace gmtk2022
 	class Assets
 	{
 	public:
+		// TODO: Move into Loading Screen
+		static void LoadAllResources();
+
 		static void AddTexture(std::string name, Texture2D texture);
 		static Texture2D GetTexture(std::string name);
 	private:

@@ -5,6 +5,14 @@ namespace gmtk2022
 {
 	std::map<std::string, Texture2D> Assets::s_Textures;
 
+	// TODO: Move into Loading Screen
+	void Assets::LoadAllResources()
+	{
+		// Jam Logo Big
+		Texture2D jamLogoBig = LoadTexture("resources/images/jam_logo_big.png");
+		AddTexture("Jam Logo Big", jamLogoBig);
+	}
+
 	Texture2D Assets::GetTexture(std::string name)
 	{
 		std::map<std::string, Texture2D>::iterator itr;
