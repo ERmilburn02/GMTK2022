@@ -23,6 +23,8 @@ jobs:
           install: >-
             git
             base-devel
+      - name: ls
+        run: ls
       - name: Run premake
         run: cd cd gmtk_2022_game && premake-mingw.bat
       - name: Build
