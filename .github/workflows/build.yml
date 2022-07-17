@@ -1,0 +1,49 @@
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  build-win:
+    runs-on: windows-latest
+    defaults:
+      run:
+        shell: msys2 {0}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Setup MSYS2
+        uses: msys2/setup-msys2@v2
+        with:
+          update: true
+          install: >-
+            git
+            base-develdist
+      - name: Change Directory
+        run: cd gmtk_2022_game
+      - name: Run premake
+        run: ./premake-mingw.bat
+      - name: Build
+        run: make config=release_x64
+      - name: Copy Resources
+        run: cp --recursive resources _bin/Release
+      - name: Remove raylib library
+        run: rm _bin/Release/libraylib.a
+      - name: Zip
+        run: |
+          cd _bin/Release
+          zip ../Win.zip * -r
+      - name: Tag
+        run: |
+          git tag --force continuous ${{github.sha}}
+          git push --tags --force
+      - name: Release
+        uses: ncipollo/release-action@v1
+        with:
+          allowUpdates: true
+          artifacts: "gmtk_2022_game/_bin/Win.zip"
+          body: >
+            This is an automated build of the source code.
+          tag: continuous
