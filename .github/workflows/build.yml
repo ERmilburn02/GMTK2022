@@ -23,8 +23,6 @@ jobs:
           install: >-
             git
             base-devel
-      - name: LFS Checkout
-        run: git lfs checkout
       - name: Change Directory
         run: cd gmtk_2022_game
       - name: Run premake
