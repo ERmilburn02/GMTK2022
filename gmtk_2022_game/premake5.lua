@@ -65,7 +65,7 @@ workspace (workspaceName)
     platforms { "x64"}
 
     makesettings [[
-        CC = gcc
+        CC = g++
     ]]
 
     filter "configurations:Debug"
