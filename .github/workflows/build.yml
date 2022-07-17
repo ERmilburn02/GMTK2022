@@ -23,16 +23,14 @@ jobs:
           install: >-
             git
             base-devel
-      - name: ls
-        run: ls
       - name: Run premake
-        run: cd cd gmtk_2022_game && premake-mingw.bat
+        run: cd gmtk_2022_game && premake-mingw.bat
       - name: Build
         run: cd gmtk_2022_game && make config=release_x64
       - name: Copy Resources
         run: cd gmtk_2022_game && cp --recursive resources _bin/Release
       - name: Remove raylib library
-        run: cd cd gmtk_2022_game && rm _bin/Release/libraylib.a
+        run: cd gmtk_2022_game && rm _bin/Release/libraylib.a
       - name: Zip
         run: |
           cd gmtk_2022_game/_bin/Release
