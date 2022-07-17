@@ -14,8 +14,7 @@ namespace gmtk2022
     {
         m_Textures = Assets::GetTextureList();
         m_TextureStartSize = m_Textures.size();
-        m_NextTexture = m_Textures[0];
-        m_Textures.erase(m_Textures.begin());
+        m_NextTexture = "NEXT_TEXTURE";
     }
 
     void LoadingScreen::Update()
@@ -67,10 +66,10 @@ namespace gmtk2022
         int nextTextureWidth = MeasureText(m_NextTexture.c_str(), 24);
         int loadingTextWidth = MeasureText("Loading assets...", 24);
  
-        DrawRectangle(GetScreenWidth() / 2 - 200, GetScreenHeight() / 2 - 50, 400, 100, DARKGRAY);
-        DrawRectangle(GetScreenWidth() / 2 - 200, GetScreenHeight() / 2 - 50, 400 * ((m_TextureStartSize - m_Textures.size()) / m_TextureStartSize), 100, GREEN);
+        // DrawRectangle(GetScreenWidth() / 2 - 400, GetScreenHeight() / 2 - 50, 800, 100, DARKGRAY);
+        // DrawRectangle(GetScreenWidth() / 2 - 400, GetScreenHeight() / 2 - 50, (int)(800 * (float)((m_TextureStartSize - m_Textures.size()) / m_TextureStartSize)), 100, ORANGE);
         DrawText("Loading assets...", GetScreenWidth() / 2 - loadingTextWidth / 2, GetScreenHeight() / 2 - 20, 24, RAYWHITE);
-        DrawText(m_NextTexture.c_str(), GetScreenWidth() / 2 - nextTextureWidth / 2, GetScreenHeight() / 2 + 20, 24, RAYWHITE);
+        if (m_NextTexture != "NO_NEXTURES_LEFT" && m_NextTexture != "NEXT_TEXTURE") DrawText(m_NextTexture.c_str(), GetScreenWidth() / 2 - nextTextureWidth / 2, GetScreenHeight() / 2 + 20, 24, RAYWHITE);
     }
 
     void LoadingScreen::Unload()
