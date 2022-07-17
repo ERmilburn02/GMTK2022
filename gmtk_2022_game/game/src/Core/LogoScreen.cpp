@@ -19,6 +19,8 @@ namespace gmtk2022
 
 	void LogoScreen::Update()
 	{
+		if (IsKeyPressed(KEY_ENTER) || IsKeyPressed(KEY_SPACE) || IsMouseButtonPressed(MOUSE_BUTTON_LEFT)) m_Timer = 0;
+
 		if (m_Timer > 0) m_Timer -= GetFrameTime();
 		if (m_Timer < 0.5f)
 		{
@@ -27,8 +29,11 @@ namespace gmtk2022
         if (m_Timer < 0)
         {
             m_Timer = 0;
-            m_App->ChangeScreen(new TitleScreen(m_App));
         }
+		if (m_Timer == 0)
+		{
+            m_App->ChangeScreen(new TitleScreen(m_App));
+		}
 	}
 
 	void LogoScreen::Draw()

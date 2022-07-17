@@ -16,7 +16,7 @@ namespace gmtk2022
 	private:
 		float m_Timer;
 		int m_LogoAlpha;
-		const float m_TimerMax = 5.0f;
+		const float m_TimerMax = 3.0f;
         App* m_App;
 	};
 }
