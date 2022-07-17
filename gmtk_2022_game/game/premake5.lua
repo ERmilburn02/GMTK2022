@@ -6,6 +6,7 @@ project (workspaceName)
 	define_Cpp();
     location "../_build"
     targetdir "../_bin/%{cfg.buildcfg}"
+    staticruntime "On"
 	
     filter "configurations:Release"
 		kind "WindowedApp"
