@@ -31,7 +31,7 @@ namespace gmtk2022
 
     void GameplayScreen::Update()
     {
-        if (IsMouseButtonPressed(MOUSE_BUTTON_LEFT) || IsKeyPressed(KEY_SPACE) && m_RollsLeft > 0)
+        if ((IsMouseButtonPressed(MOUSE_BUTTON_LEFT) || IsKeyPressed(KEY_SPACE)) && m_RollsLeft > 0)
         {
             m_CurrentDiceValue = m_RndDst(m_RndGen);
             m_Score += m_CurrentDiceValue;
