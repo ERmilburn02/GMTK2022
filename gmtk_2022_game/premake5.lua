@@ -64,10 +64,6 @@ workspace (workspaceName)
     configurations { "Debug", "Release"}
     platforms { "x64"}
 
-    makesettings [[
-        CC = g++
-    ]]
-
     filter "configurations:Debug"
         defines { "DEBUG" }
         symbols "On"
