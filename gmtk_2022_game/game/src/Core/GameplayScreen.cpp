@@ -27,6 +27,7 @@ namespace gmtk2022
 		m_DiceRes.push_back("resources/images/dieWhite_border6.png");
 
         m_RndDst = std::uniform_int_distribution<int>(1, 6);
+        // engine.seed(std::chrono::system_clock::now().time_since_epoch().count());
     }
 
     void GameplayScreen::Update()
